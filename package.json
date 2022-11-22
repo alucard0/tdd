@@ -30,7 +30,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "npm run test:js && npm run test:ts",
+    "test":"jest",
     "test:ts": "tsc --noEmit",
     "test:js": "jest --coverage",
     "lint": "npm run lint:format && npm run lint:js",
