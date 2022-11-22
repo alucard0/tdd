@@ -18,9 +18,6 @@ const fizzbuzz = (number: number): number | string => {
 }
 
 describe("fizzbuzz", (): void => {
-  it("should be a function", (): void => {
-    expect(typeof fizzbuzz).toBe("function")
-  })
   it("should throw if not number is provides as parameter", (): void => {
     // @ts-ignore: Unreachable code error
     expect((): void => fizzbuzz("5")).toThrow()
