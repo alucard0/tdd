@@ -8,9 +8,11 @@ Es un programa que al pasarle un número:
  ' Muestra el número si no es multiplo de ninguno de los anteriores.
 */
 
-const fizzbuzz = (number: number): number => {
+const fizzbuzz = (number: number): number | string => {
   if (typeof number !== "number") throw new Error("parameter provided must be a number")
   if (Number.isNaN(number)) throw new Error("parameter provided must be a number")
+
+  if (number % 3 === 0) return "fizz"
 
   return number
 }
@@ -38,5 +40,14 @@ describe("fizzbuzz", (): void => {
 
   it("should return 2 if number provided is 2", () => {
     expect(fizzbuzz(2)).toBe(2)
+  })
+
+  it("should return 'fizz' if number provided is 3", () => {
+    expect(fizzbuzz(3)).toBe("fizz")
+  })
+  it("should return 'fizz' if number provided is multiple of 3", () => {
+    expect(fizzbuzz(6)).toBe("fizz")
+    expect(fizzbuzz(9)).toBe("fizz")
+    expect(fizzbuzz(12)).toBe("fizz")
   })
 })
