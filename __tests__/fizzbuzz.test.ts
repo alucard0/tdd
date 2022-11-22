@@ -1,4 +1,5 @@
 import { render } from "@testing-library/react"
+import { fizzbuzz } from "../src/utils/fizzbuzz"
 
 /*
 Es un programa que al pasarle un número:
@@ -7,15 +8,6 @@ Es un programa que al pasarle un número:
  - Muestra "fizzbuzz" sis es múltiplo de 3 y 5.
  ' Muestra el número si no es multiplo de ninguno de los anteriores.
 */
-
-const fizzbuzz = (number: number): number | string => {
-  if (typeof number !== "number") throw new Error("parameter provided must be a number")
-  if (Number.isNaN(number)) throw new Error("parameter provided must be a number")
-
-  if (number % 3 === 0) return "fizz"
-
-  return number
-}
 
 describe("fizzbuzz", (): void => {
   it("should throw if not number is provides as parameter", (): void => {
@@ -46,5 +38,15 @@ describe("fizzbuzz", (): void => {
     expect(fizzbuzz(6)).toBe("fizz")
     expect(fizzbuzz(9)).toBe("fizz")
     expect(fizzbuzz(12)).toBe("fizz")
+  })
+  it("should return 'buzz' if number provided is 5", () => {
+    expect(fizzbuzz(5)).toBe("buzz")
+  })
+  it("should return 'buzz' if number provided is multiple of 5", () => {
+    expect(fizzbuzz(10)).toBe("buzz")
+    expect(fizzbuzz(20)).toBe("buzz")
+  })
+  it("should return 'fizzbuzz' if number provided is multiple of 5 and 3", () => {
+    expect(fizzbuzz(15)).toBe("fizzbuzz")
   })
 })
