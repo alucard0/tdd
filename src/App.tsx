@@ -1,5 +1,6 @@
 import logo from "./logo.svg"
 import "./App.css"
+import Pokemon from "./components/Pokemon/Pokemon"
 
 function App(): JSX.Element {
   return (
@@ -18,6 +19,7 @@ function App(): JSX.Element {
           Learn React
         </a>
       </header>
+      <Pokemon />
     </div>
   )
 }

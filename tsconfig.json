@@ -19,7 +19,7 @@
     "declaration": true,
     "sourceMap": true,
     "rootDir": ".",
-    "baseUrl": "."
+    "baseUrl": ".",
   },
   "include": [ "src/**/*", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
   "exclude": ["node_modules", "coverage","build", "scripts"]

@@ -6,7 +6,7 @@ const Calculator = (): JSX.Element=>{
 }
 
 describe('Calculator',():void=>{
-    //afterEach(cleanup)
+    afterEach(cleanup)
     it('should render',():void =>{
         render(<Calculator />)
     })
